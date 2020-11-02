@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accordian</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            list-style-type: none;
+        }
+
+        body {
+            background-color: #222;
+            padding: 3rem;
+        }
+
+        a {
+            text-decoration: none;
+            font-size: 1.8rem;
+            color: white;
+        }
+
+        .active {
+            color: coral;
+        }
+
+        .ml {
+            margin-left: 2rem;
+        }
+
+        .pb {
+            padding-bottom: 2rem;
+        }
+
+        .sub-menu {
+            max-height: 0;
+            overflow: hidden;
+        }
+
+        .menu-trigger.is-menu + .sub-menu {
+            max-height: 100%;
+            overflow: visible;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li class="pb">
+            <a class="menu-trigger active" href="#">Home</a>
+            <ul class="sub-menu ml">
+                <li><a href="#">A</a></li>
+                <li><a href="#">B</a></li>
+                <li><a href="#">C</a></li>
+                <li><a href="#">D</a></li>
+            </ul>
+        </li>
+        <li class="pb">
+            <a class="menu-trigger active" href="#">Contact</a>
+            <ul class="sub-menu ml">
+                <li><a href="#">A</a></li>
+                <li><a href="#">B</a></li>
+                <li><a href="#">C</a></li>
+                <li><a href="#">D</a></li>
+            </ul>
+        </li>
+        <li>
+            <a class="menu-trigger active" href="#">About</a>
+            <ul class="sub-menu ml">
+                <li><a href="#">A</a></li>
+                <li><a href="#">B</a></li>
+                <li><a href="#">C</a></li>
+                <li><a href="#">D</a></li>
+            </ul>
+        </li>
+    </ul>
+
+    <script>
+        const triggers = document.querySelectorAll(".menu-trigger");
+        for( let i = 0; i < triggers.length; i++) {
+            triggers[i].addEventListener('click',function(e){
+                this.classList.toggle('is-menu');                
+            });
+        }
+    </script>
+</body>
+</html>
